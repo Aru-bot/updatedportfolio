@@ -1,0 +1,943 @@
+/* Portfolio Section Styles */
+
+/* Restore Portfolio section layout and fix overlay */
+.portfolio {
+  padding: var(--section-padding);
+  background: linear-gradient(135deg, var(--greek-cream) 0%, var(--greek-white) 100%);
+  position: relative;
+}
+
+.portfolio-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.portfolio-content {
+  position: relative;
+}
+
+/* Portfolio Tabs */
+.portfolio-tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 96px; /* 1 inch space between tabs */
+  margin-bottom: 50px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--greek-stone);
+  border: 2px solid var(--greek-marble);
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: var(--transition-smooth), background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  transition: var(--transition-smooth);
+  z-index: -1;
+}
+
+.tab-btn:hover::before,
+.tab-btn.active::before {
+  width: 100%;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--greek-white);
+  border-color: var(--greek-gold);
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Zigzag effect: alternate vertical position */
+.portfolio-tabs .tab-btn {
+  will-change: transform;
+}
+.portfolio-tabs .tab-btn:nth-child(odd) {
+  transform: translateY(-28px);
+}
+.portfolio-tabs .tab-btn:nth-child(even) {
+  transform: translateY(28px);
+}
+
+/* On hover or active, combine zigzag and scale */
+.portfolio-tabs .tab-btn:hover,
+.portfolio-tabs .tab-btn.active {
+  /* Remove previous transform, apply both zigzag and scale */
+}
+.portfolio-tabs .tab-btn:nth-child(odd):hover,
+.portfolio-tabs .tab-btn:nth-child(odd).active {
+  transform: translateY(-38px) scale(1.08);
+}
+.portfolio-tabs .tab-btn:nth-child(even):hover,
+.portfolio-tabs .tab-btn:nth-child(even).active {
+  transform: translateY(38px) scale(1.08);
+}
+
+/* Carousel Section */
+.carousel-section {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* Card Styles */
+.projects-card,
+.achievements-card,
+.skills-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.projects-card:hover,
+.achievements-card:hover,
+.skills-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+}
+
+.card-image {
+  position: relative;
+  height: 291px; /* original 300px - 3% = 291px */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.projects-card:hover .card-overlay,
+.achievements-card:hover .card-overlay,
+.skills-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.projects-card:hover .card-image img,
+.achievements-card:hover .card-image img,
+.skills-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.view-details-btn {
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  color: var(--greek-white);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.projects-card:hover .view-details-btn,
+.achievements-card:hover .view-details-btn,
+.skills-card:hover .view-details-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.card-info {
+  padding-top: 29px; /* original 30px - 3% of 30px ≈ 29px */
+  padding-bottom: 29px;
+}
+
+.card-category {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  color: var(--greek-white);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-family: var(--font-primary);
+  font-size: 1.8rem;
+  color: var(--greek-navy);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.card-description {
+  color: var(--greek-stone);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.card-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: var(--greek-marble);
+  color: var(--greek-navy);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--greek-gold);
+  transition: var(--transition-smooth);
+}
+
+.tech-tag:hover {
+  background: var(--greek-gold);
+  color: var(--greek-white);
+  transform: translateY(-2px);
+}
+
+/* Achievement specific styles */
+.achievement-meta {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.achievement-year {
+  background: var(--greek-gold);
+  color: var(--greek-white);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.achievement-org {
+  color: var(--greek-stone);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Skills specific styles */
+.skill-level {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.skill-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--greek-marble);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--greek-gold), var(--greek-bronze));
+  border-radius: 4px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.skill-percentage {
+  color: var(--greek-gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 40px;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.carousel-btn {
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  color: var(--greek-white);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.carousel-btn.prev {
+  left: 10% !important;
+}
+.carousel-btn.next {
+  right: 10% !important;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.carousel-btn:active {
+  transform: translateY(-1px);
+}
+
+.carousel-indicators {
+  left: 50%;
+  transform: translateX(-50%) scale(1.3);
+  position: absolute;
+  bottom: 32px;
+  width: auto;
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 18px;
+  height: 18px;
+  background: var(--greek-gold);
+  border: 3px solid var(--greek-bronze);
+  box-shadow: 0 0 8px 2px #fffbe6;
+}
+
+.indicator.active {
+  background: var(--greek-bronze);
+  border-color: var(--greek-gold);
+  box-shadow: 0 0 16px 4px var(--greek-gold);
+}
+
+.indicator:hover {
+  background: var(--greek-gold);
+  transform: scale(1.1);
+}
+
+.portfolio-ornament {
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  opacity: 0.1;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: var(--greek-white);
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.4s ease-out;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--greek-gold);
+  color: var(--greek-white);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 1;
+}
+
+.modal-close:hover {
+  background: var(--greek-bronze);
+  transform: scale(1.1);
+}
+
+.modal-header {
+  padding: 30px 30px 20px;
+  border-bottom: 2px solid var(--greek-marble);
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-family: var(--font-primary);
+  font-size: 2.2rem;
+  color: var(--greek-navy);
+  margin-bottom: 10px;
+}
+
+.modal-category {
+  background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
+  color: var(--greek-white);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-details {
+  display: grid;
+  gap: 30px;
+}
+
+.detail-section h3 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--greek-navy);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.detail-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--greek-gold), var(--greek-bronze));
+  border-radius: 1px;
+}
+
+.details-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 3px solid var(--greek-gold);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.05);
+}
+
+.detail-item h4 {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  color: var(--greek-navy);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.detail-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detail-item li {
+  padding: 5px 0;
+  color: var(--greek-stone);
+  position: relative;
+  padding-left: 20px;
+}
+
+.detail-item li::before {
+  content: '•';
+  color: var(--greek-gold);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.nested-details {
+  display: grid;
+  gap: 10px;
+}
+
+.sub-detail {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.sub-detail strong {
+  color: var(--greek-navy);
+  min-width: 100px;
+}
+
+.sub-detail span {
+  color: var(--greek-stone);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .portfolio-ornament {
+    display: none;
+  }
+
+  .modal-content {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 60px 0;
+  }
+
+  .portfolio-tabs {
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .card-info {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+  }
+
+  .carousel-controls {
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .modal-header {
+    padding: 20px 20px 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio {
+    padding: 40px 0;
+  }
+
+  .portfolio-container {
+    padding: 0 15px;
+  }
+
+  .portfolio-tabs {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-info {
+    padding: 15px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+
+  .carousel-controls {
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-image {
+    height: 150px;
+  }
+
+  .detail-item {
+    padding: 15px;
+  }
+} 
+
+/* Skills Dropdown Styles */
+.skills-dropdown-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.skills-dropdown-btn {
+  background: linear-gradient(90deg, var(--greek-gold), var(--greek-bronze));
+  color: var(--greek-white);
+  border: none;
+  padding: 10px 22px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-bottom: 8px;
+}
+.skills-dropdown-btn:hover {
+  background: linear-gradient(90deg, var(--greek-bronze), var(--greek-gold));
+  color: var(--greek-navy);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.skills-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 260px;
+  background: #fffbe9;
+  border: 2px solid var(--greek-gold);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12), 0 2px 8px rgba(120, 120, 120, 0.08);
+  padding: 18px 20px 12px 20px;
+  z-index: 10;
+  animation: fadeIn 0.3s;
+}
+
+.dropdown-skill-item {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: none;
+  border: none;
+}
+.dropdown-skill-name {
+  font-weight: 600;
+  color: var(--greek-navy);
+  font-size: 1.05rem;
+  margin-bottom: 2px;
+}
+.dropdown-skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: none;
+  border: none;
+}
+.dropdown-skill-progress {
+  height: 8px;
+  background: linear-gradient(90deg, var(--greek-gold), var(--greek-bronze));
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  min-width: 0;
+}
+.dropdown-skill-percentage {
+  color: var(--greek-gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 36px;
+}
+
+@keyframes skillFillDropdown {
+  from { width: 0; }
+  to { width: var(--skill-width, 100%); }
+}
+
+@media (max-width: 600px) {
+  .skills-dropdown {
+    min-width: 180px;
+    padding: 12px 8px 8px 8px;
+  }
+  .skills-dropdown-btn {
+    font-size: 1rem;
+    padding: 8px 14px;
+  }
+} 
+
+.skills-list-container {
+  margin-top: 0;
+  width: 80vw;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+.dropdown-skill-bar {
+  width: 80vw;
+  max-width: none;
+  background: transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-shadow: none;
+  border: none;
+}
+.dropdown-skill-progress {
+  height: 12px;
+  background: linear-gradient(90deg, var(--greek-gold), var(--greek-bronze));
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+  min-width: 0;
+}
+.dropdown-skill-bar:hover .dropdown-skill-progress {
+  height: 18px;
+  box-shadow: 0 0 16px 2px rgba(212, 175, 55, 0.25);
+  background: linear-gradient(90deg, var(--greek-bronze), var(--greek-gold));
+} 
+
+.skills-section {
+  margin-bottom: 32px;
+  padding: 18px 0 18px 0;
+  border-radius: 16px;
+  transition: background 0.3s, box-shadow 0.3s, border 0.3s;
+  box-shadow: none;
+  border: none;
+}
+.skills-section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--greek-navy);
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+.skills-section:hover,
+.skills-section:focus {
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: none;
+  border: 2px solid var(--greek-gold);
+}
+.skills-section:hover .skills-section-title,
+.skills-section:focus .skills-section-title {
+  color: var(--greek-gold);
+} 
+
+@media (min-width: 1200px) {
+  .portfolio-container {
+    max-width: 1400px;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .carousel-section {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .section-title {
+    font-size: 3.2rem;
+  }
+} 
+
+@media (min-width: 768px) {
+  .projects-card,
+  .achievements-card,
+  .card-image,
+  .card-title,
+  .card-info {
+    /* revert to default, no overrides */
+  }
+} 
+
+.section-title {
+  color: #000 !important;
+} 
+
+/* Standardize Portfolio section title position */
+.portfolio .section-header {
+  margin-top: 5%;
+  margin-bottom: 10rem;
+}
+
+.portfolio .section-title {
+  margin-bottom: 20px;
+}
+
+.portfolio .greek-divider {
+  margin: 0 auto 30px;
+} 
+
+ 
