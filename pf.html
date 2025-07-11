@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arundhati Singh | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #050510;
+      color: #00f0ff;
+      background-image: radial-gradient(circle at center, #0d0d1a 0%, #050510 100%);
+    }
+    header, section, footer {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    header {
+      background: linear-gradient(135deg, #0ff 0%, #09f 100%);
+      color: #050510;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 0 30px #00f0ff;
+    }
+    h1, h2 {
+      color: black;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    p {
+      color: white;
+    }
+    #about p {
+      color: white;
+    }
+    .project, .skill-card, .cert-card, .contact-card {
+      background-color: #0b0b20;
+      border: 1px solid #00f0ff33;
+      color: #00f0ff;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 15px #00f0ff22;
+    }
+    .project:hover, .skill-card:hover, .cert-card:hover, .contact-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px #00f0ff55;
+    }
+    .project a, .cert-card a, .contact-card a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+    .project a:hover, .cert-card a:hover, .contact-card a:hover {
+      text-decoration: underline;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    footer {
+      background-color: #0b0b20;
+      padding: 30px 20px;
+      text-align: center;
+      color: #00f0ff;
+      border-top: 2px solid #00f0ff22;
+      box-shadow: 0 -5px 15px #00f0ff22;
+    }
+    .cat-icon {
+      font-size: 1.2em;
+      margin-right: 5px;
+    }
+    .contact-card {
+      animation: fadeInUp 1s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: black;">Arundhati Singh</h1>
+    <p style="color: black;">B.Tech CSE Student | Aspiring HR | Tech Enthusiast | Sports Lover</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Arundhati Singh, a highly motivated and detail-oriented B.Tech Computer Science & Engineering student at Siksha 'O' Anusandhan, with a strong foundation in software development and a deep curiosity for human behavior and team dynamics. I aspire to build a career in Human Resources, blending my technical background with people-centric roles. With a keen interest in sports, I embrace discipline, persistence, and teamwork both on and off the field. My journey includes various technical projects, volunteering experiences, and leadership roles that fuel my passion for learning and growth. I believe in continuous improvement and strive to contribute meaningfully in every opportunity I pursue—be it in HR, tech, or community work.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="skill-card"><strong>HTML</strong><br>Markup language for creating web pages.</div>
+      <div class="skill-card"><strong>CSS</strong><br>Style sheet language for designing web pages.</div>
+      <div class="skill-card"><strong>JavaScript</strong><br>Programming language for interactive web apps.</div>
+      <div class="skill-card"><strong>Python</strong><br>General-purpose language for scripting and data analysis.</div>
+      <div class="skill-card"><strong>Java</strong><br>Object-oriented programming language for cross-platform applications.</div>
+      <div class="skill-card"><strong>C</strong><br>Low-level programming language known for performance and control.</div>
+      <div class="skill-card"><strong>C++</strong><br>Extension of C with object-oriented features.</div>
+      <div class="skill-card"><strong>MySQL</strong><br>Relational database management system.</div>
+      <div class="skill-card"><strong>MongoDB</strong><br>NoSQL database for scalable applications.</div>
+      <div class="skill-card"><strong>Git</strong><br>Version control system to track code changes.</div>
+      <div class="skill-card"><strong>GitHub</strong><br>Platform for hosting and collaborating on code.</div>
+      <div class="skill-card"><strong>React</strong><br>JavaScript library for building user interfaces.</div>
+      <div class="skill-card"><strong>Machine Learning</strong><br>Using algorithms to learn from and predict on data.</div>
+      <div class="skill-card"><strong>Communication</strong><br>Effective verbal and written communication skills.</div>
+      <div class="skill-card"><strong>Teamwork</strong><br>Working collaboratively with others to achieve goals.</div>
+      <div class="skill-card"><strong>Leadership</strong><br>Guiding and inspiring teams to perform their best.</div>
+      <div class="skill-card"><strong>Time Management</strong><br>Effectively managing time to meet deadlines.</div>
+      <div class="skill-card"><strong>Public Speaking</strong><br>Confidently delivering ideas and concepts to an audience.</div>
+      <div class="skill-card"><strong>Organizational Skills</strong><br>Maintaining order and structure in projects and tasks.</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Facebook-clone</h3>
+      <p>HTML/CSS project mimicking Facebook’s static interface.</p>
+      <a href="https://github.com/Aru-bot/Facebook-clone" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Pokedex</h3>
+      <p>JavaScript app fetching Pokémon data from a public API.</p>
+      <a href="https://github.com/Aru-bot/Pokedex" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>Pomodoro</h3>
+      <p>A productivity timer built using the Pomodoro technique.</p>
+      <a href="https://github.com/Aru-bot/Pomodoro" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project">
+      <h3>ResumeBuilder</h3>
+      <p>Tool for creating resumes with live preview.</p>
+      <a href="https://github.com/Aru-bot/ResumeBuilder" target="_blank">View on GitHub</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-card">
+      <p>Email: <a href="mailto:arundhatisingh0101@gmail.com">arundhatisingh0101@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/arundhatisingh0101/" target="_blank">linkedin.com/in/arundhatisingh0101</a></p>
+      <p>GitHub: <a href="https://github.com/Aru-bot" target="_blank">github.com/Aru-bot</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="cat-icon">🐱</span>Created with passion</p>
+    <p>&copy; Arundhati Singh. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+<!-- This is a simple portfolio page for Arundhati Singh, showcasing her skills, projects, and contact information. The design features a dark theme with neon accents, using CSS for styling and layout. The page is responsive and includes sections for about, skills, projects, and contact details. -->
+<!-- The portfolio is structured with semantic HTML elements and includes hover effects for interactivity. The use of Google Fonts adds a modern touch to the typography. -->
