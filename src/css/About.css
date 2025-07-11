@@ -1,0 +1,333 @@
+/* About Section Styles */
+.about {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--greek-white) 0%, var(--greek-cream) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-intro h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--greek-navy);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about-intro h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--greek-gold);
+}
+
+.about-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--greek-navy);
+  opacity: 0.9;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.detail-item h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--greek-navy);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.detail-item h4::before {
+  content: '✦';
+  color: var(--greek-gold);
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.detail-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--greek-navy);
+  opacity: 0.8;
+}
+
+.about-skills h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--greek-navy);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--greek-gold);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--greek-navy);
+  font-size: 1.1rem;
+}
+
+.skill-percentage {
+  color: var(--greek-gold);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--greek-cream);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--greek-gold) 0%, var(--greek-blue) 100%);
+  border-radius: 4px;
+  transition: width 1.5s ease;
+  position: relative;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Extended Skills Sections */
+.skills-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.skills-category h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--greek-navy);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.skills-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--greek-gold);
+}
+
+.skills-grid-extended {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--greek-gold) 0%, var(--greek-blue) 100%);
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.skill-info {
+  padding-left: 15px;
+}
+
+.skill-info h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--greek-navy);
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.skill-info h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--greek-gold);
+}
+
+.skill-info .skill-bar {
+  margin-bottom: 15px;
+  height: 10px;
+}
+
+.skill-info .skill-percentage {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: var(--greek-gold);
+  font-size: 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-intro h3 {
+    font-size: 2rem;
+  }
+
+  .skills-grid-extended {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-category h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-container {
+    padding: 0 15px;
+  }
+
+  .about-intro h3 {
+    font-size: 1.8rem;
+  }
+
+  .skill-card {
+    margin: 0 10px;
+    padding: 18px;
+  }
+
+  .skill-info h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Greek Ornament */
+.about-ornament {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.greek-pattern-small {
+  width: 60px;
+  height: 60px;
+  background: var(--greek-gold);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z'/%3E%3C/svg%3E") no-repeat center;
+  mask-size: contain;
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} 
