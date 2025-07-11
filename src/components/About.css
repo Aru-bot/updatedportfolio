@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
   background: linear-gradient(135deg, var(--greek-white) 0%, var(--greek-cream) 100%);
   padding: var(--section-padding);
@@ -334,11 +334,23 @@
 }
 
 .container.about-container {
-  position: relative;
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding-top: 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about .section-header {
+  margin-bottom: 60px;
+}
+
+.about .section-title {
+  margin-bottom: 20px;
+}
+
+.about .greek-divider {
+  margin: 0 auto 30px;
 }
 
 .about-content {
@@ -377,3 +389,317 @@
 .greek-divider::after {
   right: -20px;
 } 
+
+/* Enhanced Responsive Design for About */
+
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+  .about-container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+  
+  .about-content {
+    gap: 80px;
+  }
+  
+  .about-text {
+    padding: 50px;
+  }
+  
+  .about-intro h3 {
+    font-size: 2.8rem;
+  }
+  
+  .about-intro p {
+    font-size: 1.2rem;
+  }
+  
+  .about-details {
+    padding: 50px;
+  }
+  
+  .detail-item h4 {
+    font-size: 1.4rem;
+  }
+  
+  .detail-item p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .about-container {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+  
+  .about-content {
+    gap: 60px;
+  }
+  
+  .about-text {
+    padding: 40px;
+  }
+  
+  .about-intro h3 {
+    font-size: 2.5rem;
+  }
+  
+  .about-intro p {
+    font-size: 1.1rem;
+  }
+  
+  .about-details {
+    padding: 40px;
+  }
+}
+
+/* Tablet Landscape (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .about-container {
+    max-width: 1000px;
+    padding: 0 25px;
+  }
+  
+  .about-content {
+    gap: 50px;
+  }
+  
+  .about-text {
+    padding: 35px;
+  }
+  
+  .about-intro h3 {
+    font-size: 2.2rem;
+  }
+  
+  .about-intro p {
+    font-size: 1rem;
+  }
+  
+  .about-details {
+    padding: 35px;
+  }
+  
+  .detail-item h4 {
+    font-size: 1.2rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .about-container {
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .about-text {
+    padding: 30px;
+  }
+  
+  .about-intro h3 {
+    font-size: 2rem;
+  }
+  
+  .about-intro p {
+    font-size: 0.95rem;
+  }
+  
+  .about-details {
+    padding: 30px;
+  }
+  
+  .detail-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.9rem;
+  }
+  
+  .detail-item {
+    padding: 20px;
+  }
+  
+  .detail-icon {
+    font-size: 2rem;
+    min-width: 50px;
+  }
+}
+
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .about-container {
+    max-width: 600px;
+    padding: 0 15px;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .about-text {
+    padding: 25px;
+  }
+  
+  .about-intro h3 {
+    font-size: 1.8rem;
+  }
+  
+  .about-intro p {
+    font-size: 0.9rem;
+  }
+  
+  .about-details {
+    padding: 25px;
+  }
+  
+  .detail-item h4 {
+    font-size: 1rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.85rem;
+  }
+  
+  .detail-item {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .detail-icon {
+    font-size: 1.8rem;
+    min-width: 40px;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .about-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .about-text {
+    padding: 20px;
+  }
+  
+  .about-intro h3 {
+    font-size: 1.5rem;
+  }
+  
+  .about-intro p {
+    font-size: 0.85rem;
+  }
+  
+  .about-details {
+    padding: 20px;
+  }
+  
+  .detail-item h4 {
+    font-size: 0.95rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.8rem;
+  }
+  
+  .detail-item {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .detail-icon {
+    font-size: 1.5rem;
+    min-width: 35px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .about-container {
+    padding: 0 5px;
+  }
+  
+  .about-text {
+    padding: 15px;
+  }
+  
+  .about-intro h3 {
+    font-size: 1.3rem;
+  }
+  
+  .about-intro p {
+    font-size: 0.8rem;
+  }
+  
+  .about-details {
+    padding: 15px;
+  }
+  
+  .detail-item h4 {
+    font-size: 0.9rem;
+  }
+  
+  .detail-item p {
+    font-size: 0.75rem;
+  }
+  
+  .detail-item {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .detail-icon {
+    font-size: 1.3rem;
+    min-width: 30px;
+  }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .detail-item {
+    min-height: 60px; /* Minimum touch target size */
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .about-content {
+    gap: 20px;
+  }
+  
+  .about-text {
+    padding: 15px;
+  }
+  
+  .about-intro h3 {
+    font-size: 1.4rem;
+  }
+  
+  .about-details {
+    padding: 15px;
+  }
+  
+  .detail-item {
+    padding: 10px;
+  }
+} 
+

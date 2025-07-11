@@ -149,12 +149,12 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <div className="contact-container">
-        <div className="section-header">
+        <div className="section-header" style={{ marginTop: '-25%' }}>
           <h2 className="section-title">Get In Touch</h2>
           <div className="greek-divider"></div>
         </div>
 
-        <div className="contact-content">
+        <div className="contact-content" style={{ marginTop: '10rem' }}>
           <div className="contact-info">
             <div className="info-header">
               <h3>Let's Connect</h3>

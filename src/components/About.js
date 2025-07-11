@@ -2,23 +2,6 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
-  const skills = [
-    { name: "HTML/CSS", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "React.js", level: 75 },
-    { name: "Java", level: 60 },
-    { name: "Python", level: 40 },
-    { name: "MySQL", level: 60 },
-    { name: "Git/GitHub", level: 85 },
-    { name: "Web Development", level: 80 },
-    { name: "Communication", level: 90 },
-    { name: "Teamwork", level: 85 },
-    { name: "Leadership", level: 80 },
-    { name: "Time Management", level: 85 },
-    { name: "Public Speaking", level: 75 },
-    { name: "Organizational Skills", level: 80 }
-  ];
-
   return (
     <section id="about" className="about">
       <div className="container about-container">

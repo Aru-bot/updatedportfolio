@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Portfolio.css';
 
 const Portfolio = () => {
   const [activeCarousel, setActiveCarousel] = useState('projects');
   const [currentIndex, setCurrentIndex] = useState({ projects: 0, achievements: 0, skills: 0 });
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [skillsDropdownOpen, setSkillsDropdownOpen] = useState(false);
 
-  const projects = [
+  const projects = useMemo(() => [
     {
       id: 1,
       title: "Greek-Inspired Portfolio Website",
@@ -130,9 +130,9 @@ const Portfolio = () => {
         }
       }
     }
-  ];
+  ], []);
 
-  const achievements = [
+  const achievements = useMemo(() => [
     {
       id: 1,
       title: "BTech CSE Student",
@@ -207,41 +207,30 @@ const Portfolio = () => {
       details: {
         role: "Class Representative",
         responsibilities: ["Student-faculty liaison", "Event organization", "Peer support"],
-        achievements: "Fostered communication and teamwork in the class"
+        achievements: "Successfully organized multiple academic and social events",
+        skills: ["Leadership", "Communication", "Organization", "Problem-solving"],
+        impact: "Improved student-faculty communication and class coordination"
       }
     },
     {
       id: 6,
-      title: "Model at SOA Fashion Club",
-      category: "Extracurricular",
-      description: "Participated as a model in SOA Fashion Club events, showcasing creativity and confidence on stage.",
-      year: "2023-2024",
-      organization: "SOA Fashion Club",
-      image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80", // Unsplash runway/fashion show image
-      details: {
-        role: "Model",
-        activities: ["Fashion shows", "Club events"],
-        achievements: "Represented the club in inter-college events"
-      }
-    },
-    {
-      id: 7,
-      title: "Captain and Wicketkeeper of SOA Women Cricket Team",
+      title: "Cricket Team Captain",
       category: "Sports",
-      description: "Led the SOA Women Cricket Team as captain and wicketkeeper, promoting sportsmanship and teamwork. Guided the team to victory in the SOA Cup 2025.",
-      year: "2023-2024",
-      organization: "SOA University Sports",
-      image: "https://images.unsplash.com/photo-1505843279827-4b2b9c5c0c88?auto=format&fit=crop&w=600&q=80", // Unsplash cricket action image
-      extraImage: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=600&q=80", // Unsplash cricket bat, ball, wicket image
+      description: "Led the university cricket team to victory in the SOA Cup 2025, demonstrating leadership and teamwork in sports.",
+      year: "2025",
+      organization: "ITER SOA University",
+      image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80", // Unsplash cricket image
       details: {
-        role: "Captain & Wicketkeeper",
-        activities: ["Team leadership", "Match strategy", "Wicketkeeping"],
-        achievements: "Guided the team to win the SOA Cup 2025"
+        achievement: "Won SOA Cup 2025",
+        role: "Team Captain",
+        responsibilities: ["Team strategy", "Player coordination", "Match planning"],
+        skills: ["Leadership", "Teamwork", "Strategic thinking", "Sportsmanship"],
+        impact: "Brought victory to the university and fostered team spirit"
       }
     }
-  ];
+  ], []);
 
-  const skills = [
+  const skills = useMemo(() => [
     { id: 1, name: "HTML/CSS", level: 85 },
     { id: 2, name: "JavaScript", level: 80 },
     { id: 3, name: "React.js", level: 75 },
@@ -256,10 +245,10 @@ const Portfolio = () => {
     { id: 12, name: "Time Management", level: 85 },
     { id: 13, name: "Public Speaking", level: 75 },
     { id: 14, name: "Organizational Skills", level: 80 }
-  ];
+  ], []);
 
   // Group skills by tags/sections
-  const skillSections = [
+  const skillSections = useMemo(() => [
     {
       title: 'Technical Skills',
       skills: [
@@ -284,13 +273,13 @@ const Portfolio = () => {
         { id: 14, name: "Organizational Skills", level: 80 }
       ]
     }
-  ];
+  ], []);
 
-  const carousels = {
+  const carousels = useMemo(() => ({
     projects: projects,
     achievements: achievements,
     skills: skills
-  };
+  }), [projects, achievements, skills]);
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -448,7 +437,7 @@ const Portfolio = () => {
           <div className="greek-divider"></div>
         </div>
 
-        <div className="portfolio-tabs">
+        <div className="portfolio-tabs" style={{ marginTop: '10rem' }}>
           <button 
             className={`tab-btn ${activeCarousel === 'projects' ? 'active' : ''}`}
             onClick={() => setActiveCarousel('projects')}

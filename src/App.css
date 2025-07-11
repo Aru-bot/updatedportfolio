@@ -35,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
 }
 
 body {
@@ -199,20 +200,20 @@ main {
 
 .column {
   position: absolute;
-  width: 80px;
-  height: 300px;
+  width: 40px;
+  height: 200px;
   background: linear-gradient(180deg, var(--greek-gold), var(--greek-bronze));
-  border-radius: 8px;
   opacity: 0.1;
+  border-radius: 20px;
 }
 
 .column.left {
-  left: 10%;
+  left: 50px;
   top: 20%;
 }
 
 .column.right {
-  right: 10%;
+  right: 50px;
   bottom: 20%;
 }
 
@@ -222,26 +223,28 @@ main {
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
+  width: 60px;
   height: 30px;
   background: var(--greek-gold);
-  border-radius: 4px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Buttons */
 .btn-primary {
   background: linear-gradient(135deg, var(--greek-gold), var(--greek-bronze));
   color: var(--greek-white);
-  border: none;
   padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-primary::before {
@@ -252,7 +255,7 @@ main {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: var(--transition-smooth);
+  transition: left 0.5s;
 }
 
 .btn-primary:hover::before {
@@ -261,40 +264,42 @@ main {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--greek-navy);
+  padding: 15px 30px;
   border: 2px solid var(--greek-gold);
-  padding: 13px 28px;
+  border-radius: 25px;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 8px;
   cursor: pointer;
   transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn-secondary::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 0;
+  left: -100%;
+  width: 100%;
   height: 100%;
-  background: var(--greek-gold);
-  transition: var(--transition-smooth);
-  z-index: -1;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transition: left 0.5s;
 }
 
 .btn-secondary:hover::before {
-  width: 100%;
+  left: 100%;
 }
 
 .btn-secondary:hover {
+  background: var(--greek-gold);
   color: var(--greek-white);
   transform: translateY(-2px);
 }
@@ -343,29 +348,233 @@ main {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Enhanced Responsive Design */
+
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  .section-header {
+    margin-bottom: 80px;
+  }
+  
+  .section-title {
+    font-size: 3.5rem;
+  }
+  
+  .greek-divider {
+    width: 100px;
+    height: 5px;
+  }
+  
+  .greek-divider::before,
+  .greek-divider::after {
+    width: 15px;
+    height: 15px;
+  }
+  
+  .greek-divider::before {
+    left: -25px;
+  }
+  
+  .greek-divider::after {
+    right: -25px;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  
+  .section-header {
+    margin-bottom: 70px;
+  }
+  
+  .section-title {
+    font-size: 3.2rem;
+  }
+}
+
+/* Tablet Landscape (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+  }
+  
+  .greek-divider {
+    width: 70px;
+  }
+  
+  .greek-divider::before {
+    left: -18px;
+  }
+  
+  .greek-divider::after {
+    right: -18px;
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
   .section-title {
     font-size: 2.5rem;
   }
   
-  .column {
+  .greek-divider {
     width: 60px;
-    height: 200px;
+  }
+  
+  .greek-divider::before {
+    left: -15px;
+  }
+  
+  .greek-divider::after {
+    right: -15px;
+  }
+  
+  .column {
+    width: 30px;
+    height: 150px;
   }
   
   .column.left {
-    left: 5%;
+    left: 30px;
   }
   
   .column.right {
-    right: 5%;
+    right: 30px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 25px;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+  
+  .greek-divider {
+    width: 50px;
+    height: 3px;
+  }
+  
+  .greek-divider::before,
+  .greek-divider::after {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .greek-divider::before {
+    left: -12px;
+  }
+  
+  .greek-divider::after {
+    right: -12px;
+  }
+  
+  .column {
+    display: none; /* Hide decorative columns on mobile */
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .container,
+  .hero-content,
+  .about-container,
+  .portfolio-container,
+  .contact-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  
+  .section-header {
+    margin-bottom: 30px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .greek-divider {
+    width: 40px;
+    height: 2px;
+  }
+  
+  .greek-divider::before,
+  .greek-divider::after {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .greek-divider::before {
+    left: -10px;
+  }
+  
+  .greek-divider::after {
+    right: -10px;
   }
   
   .column {
@@ -374,29 +583,52 @@ main {
   
   .btn-primary,
   .btn-secondary {
-    padding: 12px 24px;
-    font-size: 1rem;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+  
+  .greek-pattern-small {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .greek-pattern-small::before {
+    width: 25px;
+    height: 25px;
   }
 }
 
-@media (min-width: 1200px) {
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
   .container,
+  .hero-content,
   .about-container,
   .portfolio-container,
-  .experience-container,
-  .contact-container,
-  .certificates-container,
-  .footer-container {
-    max-width: 1400px;
-    padding-left: 48px;
-    padding-right: 48px;
+  .contact-container {
+    padding: 0 5px;
   }
-  .section-header {
-    margin-bottom: 80px;
-  }
+  
   .section-title {
-    font-size: 3.2rem;
-    margin-bottom: 32px;
+    font-size: 1.5rem;
+  }
+  
+  .greek-divider {
+    width: 30px;
+  }
+  
+  .greek-divider::before {
+    left: -8px;
+  }
+  
+  .greek-divider::after {
+    right: -8px;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 6px 12px;
+    font-size: 0.85rem;
   }
 }
 

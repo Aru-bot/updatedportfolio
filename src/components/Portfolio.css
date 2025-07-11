@@ -1,5 +1,6 @@
 /* Portfolio Section Styles */
 
+/* Restore Portfolio section layout and fix overlay */
 .portfolio {
   padding: var(--section-padding);
   background: linear-gradient(135deg, var(--greek-cream) 0%, var(--greek-white) 100%);
@@ -7,10 +8,11 @@
 }
 
 .portfolio-container {
+  width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 20px;
-  position: relative;
+  text-align: center;
 }
 
 .portfolio-content {
@@ -922,4 +924,462 @@
 
 .section-title {
   color: #000 !important;
+} 
+
+/* Standardize Portfolio section title position */
+.portfolio .section-header {
+  margin-top: 5%;
+  margin-bottom: 10rem;
+}
+
+.portfolio .section-title {
+  margin-bottom: 20px;
+}
+
+.portfolio .greek-divider {
+  margin: 0 auto 30px;
+} 
+
+/* Enhanced Responsive Design for Portfolio */
+
+/* Large Desktop (1400px and up) */
+@media (min-width: 1400px) {
+  .portfolio-container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+  
+  .portfolio-tabs {
+    gap: 30px;
+  }
+  
+  .tab-btn {
+    font-size: 1.1rem;
+    padding: 15px 25px;
+  }
+  
+  .carousel-container {
+    max-width: 800px;
+  }
+  
+  .carousel-slide {
+    padding: 40px;
+  }
+  
+  .card-image img {
+    height: 300px;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .portfolio-container {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+  
+  .portfolio-tabs {
+    gap: 25px;
+  }
+  
+  .tab-btn {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+  
+  .carousel-container {
+    max-width: 700px;
+  }
+}
+
+/* Tablet Landscape (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .portfolio-container {
+    max-width: 1000px;
+    padding: 0 25px;
+  }
+  
+  .portfolio-tabs {
+    gap: 20px;
+  }
+  
+  .tab-btn {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+  
+  .carousel-container {
+    max-width: 600px;
+  }
+  
+  .carousel-slide {
+    padding: 30px;
+  }
+  
+  .card-image img {
+    height: 250px;
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .portfolio-container {
+    max-width: 800px;
+    padding: 0 20px;
+  }
+  
+  .portfolio-tabs {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    min-width: 120px;
+  }
+  
+  .carousel-container {
+    max-width: 500px;
+  }
+  
+  .carousel-slide {
+    padding: 25px;
+  }
+  
+  .card-image img {
+    height: 200px;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-controls {
+    margin-top: 20px;
+  }
+  
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-indicators {
+    gap: 8px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Mobile Large (481px - 767px) */
+@media (max-width: 767px) and (min-width: 481px) {
+  .portfolio-container {
+    max-width: 600px;
+    padding: 0 15px;
+  }
+  
+  .portfolio-tabs {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    min-width: 100px;
+  }
+  
+  .carousel-container {
+    max-width: 400px;
+  }
+  
+  .carousel-slide {
+    padding: 20px;
+  }
+  
+  .card-image img {
+    height: 180px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-description {
+    font-size: 0.85rem;
+  }
+  
+  .card-technologies {
+    gap: 5px;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+  
+  .carousel-controls {
+    margin-top: 15px;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .carousel-indicators {
+    gap: 6px;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Skills section mobile optimization */
+  .skills-list-container {
+    padding: 20px;
+  }
+  
+  .skills-section {
+    margin-bottom: 25px;
+  }
+  
+  .skills-section-title {
+    font-size: 1.2rem;
+  }
+  
+  .dropdown-skill-item {
+    padding: 8px 0;
+  }
+  
+  .dropdown-skill-name {
+    font-size: 0.9rem;
+  }
+  
+  .dropdown-skill-percentage {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Small (320px - 480px) */
+@media (max-width: 480px) {
+  .portfolio-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .portfolio-tabs {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    min-width: 90px;
+  }
+  
+  .carousel-container {
+    max-width: 100%;
+  }
+  
+  .carousel-slide {
+    padding: 15px;
+  }
+  
+  .card-image img {
+    height: 150px;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+  }
+  
+  .card-description {
+    font-size: 0.8rem;
+  }
+  
+  .card-category {
+    font-size: 0.75rem;
+  }
+  
+  .card-technologies {
+    gap: 4px;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+  
+  .carousel-controls {
+    margin-top: 12px;
+  }
+  
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .carousel-btn span {
+    font-size: 1.2rem;
+  }
+  
+  .carousel-indicators {
+    gap: 5px;
+  }
+  
+  .indicator {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Skills section mobile optimization */
+  .skills-list-container {
+    padding: 15px;
+  }
+  
+  .skills-section {
+    margin-bottom: 20px;
+  }
+  
+  .skills-section-title {
+    font-size: 1.1rem;
+  }
+  
+  .dropdown-skill-item {
+    padding: 6px 0;
+  }
+  
+  .dropdown-skill-name {
+    font-size: 0.85rem;
+  }
+  
+  .dropdown-skill-percentage {
+    font-size: 0.75rem;
+  }
+  
+  .dropdown-skill-bar {
+    height: 6px;
+  }
+}
+
+/* Extra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+  .portfolio-container {
+    padding: 0 5px;
+  }
+  
+  .portfolio-tabs {
+    gap: 5px;
+  }
+  
+  .tab-btn {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    min-width: 80px;
+  }
+  
+  .carousel-slide {
+    padding: 10px;
+  }
+  
+  .card-image img {
+    height: 120px;
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+  }
+  
+  .card-description {
+    font-size: 0.75rem;
+  }
+  
+  .carousel-btn {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .carousel-btn span {
+    font-size: 1rem;
+  }
+  
+  .indicator {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Skills section extra small mobile */
+  .skills-list-container {
+    padding: 10px;
+  }
+  
+  .skills-section-title {
+    font-size: 1rem;
+  }
+  
+  .dropdown-skill-name {
+    font-size: 0.8rem;
+  }
+  
+  .dropdown-skill-percentage {
+    font-size: 0.7rem;
+  }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .tab-btn {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .carousel-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .indicator {
+    min-width: 12px;
+    min-height: 12px;
+  }
+  
+  .view-details-btn {
+    min-height: 44px;
+    padding: 12px 20px;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .portfolio-tabs {
+    margin-bottom: 20px;
+  }
+  
+  .carousel-slide {
+    padding: 15px;
+  }
+  
+  .card-image img {
+    height: 120px;
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+  }
+  
+  .card-description {
+    font-size: 0.75rem;
+  }
 } 

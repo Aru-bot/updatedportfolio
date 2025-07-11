@@ -370,3 +370,23 @@
     font-size: 3.2rem;
   }
 } 
+
+/* Standardize Experience section title position */
+.experience-ghibli .section-header {
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 60px;
+}
+
+.experience-ghibli .section-title {
+  color: white !important;
+}
+
+.experience-ghibli .ghibli-divider {
+  background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.7));
+}
+
+.experience-ghibli .ghibli-divider::before,
+.experience-ghibli .ghibli-divider::after {
+  background: white;
+} 
